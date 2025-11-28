@@ -1,5 +1,6 @@
 // Configuration
-const API_URL = 'http://localhost:8000/predict-price';
+// const API_URL = 'http://localhost:8000/predict-price';
+const API_URL = 'https://house-price-prediction-backend-1sqr.onrender.com/predict-price';
 
 // DOM Elements
 const form = document.getElementById('prediction-form');
@@ -191,7 +192,7 @@ const initThreeJS = () => {
             // 1. Base Rotation (Earth spins West to East)
             // Only rotate if hovering
             if (isHovering) {
-                baseRotationY += 0.0002; // Very slow speed
+                baseRotationY += 0.001; // Very slow speed
             }
 
             // 2. Parallax Easing
