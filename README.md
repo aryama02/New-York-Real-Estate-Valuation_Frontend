@@ -1,4 +1,4 @@
-# House Price Predictor - Frontend
+# New York Real Estate Valuation Model - Frontend
 
 A modern, responsive web interface for property valuation, featuring real-time predictions and interactive data visualization.
 
