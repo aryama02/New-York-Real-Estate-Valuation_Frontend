@@ -1,36 +1,29 @@
-# 🏠 House Price Predictor | AI-Powered Valuation
+# House Price Predictor - Frontend
 
-![House Price Predictor Header](https://via.placeholder.com/1200x400/050816/00f2ff?text=House+Price+Predictor+|+Premium+AI+Valuation+Interface)
+A modern, responsive web interface for property valuation, featuring real-time predictions and interactive data visualization.
 
-> A state-of-the-art, immersive web application for New York real estate valuation, featuring a cinematic 3D interface and real-time market prediction.
+## Features
 
-## ✨ Features
+- **Property Valuation**: Form interface to input property specifications (bedrooms, bathrooms, living area).
+- **Real-time Predictions**: Integrated with a cloud-hosted machine learning backend to provide instant market estimates.
+- **Interactive Visualizations**: Includes a market distribution chart using Chart.js and a confidence range indicator.
+- **3D Background**: A dynamic Three.js environment featuring a rotating Earth globe with parallax mouse-tracking.
+- **Responsive Design**: Built with a mobile-first approach, ensuring compatibility across all device sizes.
 
-- **🧠 Real-time AI Predictions**: Seamless integration with a machine learning backend to provide instant property valuations.
-- **🌎 Immersive 3D Environment**: Interactive Three.js globe background with dynamic lighting, parallax effects, and city-light textures.
-- **💎 Premium Glassmorphism UI**: High-end visual aesthetic crafted with CSS backdrop filters, glowing accents, and smooth micro-animations.
-- **📈 Data Visualization**: Interactive bar charts (Chart.js) showing market distribution and value confidence.
-- **📱 Fluid & Responsive**: Fully adaptive layout designed for desktop, tablet, and mobile experiences.
-- **⚡ Cinematic Interactions**: Subtle floating animations, ripple effects, and ease-out expo transitions for a premium "heavy" feel.
+## Tech Stack
 
-## 🛠️ Tech Stack
+- **Frontend**: HTML5, Vanilla CSS3, JavaScript (ES6+).
+- **Graphics**: [Three.js](https://threejs.org/) for the background rendering.
+- **Data Charts**: [Chart.js](https://www.chartjs.org/) for results visualization.
+- **Backend Communication**: Fetch API for asynchronous requests to the valuation model.
 
-- **Frontend**: 
-  - **HTML5/CSS3**: Custom design system using variables, glassmorphism, and advanced animations.
-  - **Vanilla JavaScript (ES6+)**: Core logic and DOM manipulation.
-- **Libraries**:
-  - **[Three.js](https://threejs.org/)**: 3D background rendering and shader materials.
-  - **[Chart.js](https://www.chartjs.org/)**: Dynamic data visualization.
-- **Backend API**: 
-  - Python-based prediction engine (hosted on Render).
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-No installation is required to run the frontend! Just a modern web browser.
+Simply use a modern web browser (Chrome, Firefox, Edge, or Safari).
 
-### Local Development
+### Local Installation
 
 1. **Clone the repository**:
    ```bash
@@ -38,16 +31,16 @@ No installation is required to run the frontend! Just a modern web browser.
    cd House_Price_Predictor_Front_End-
    ```
 
-2. **Open the project**:
-   Simply open `index.html` in your browser, or use a Live Server extension in your IDE.
+2. **Run the Application**:
+   Open `index.html` directly in your browser or serve it using a local development server (e.g., Live Server).
 
-## 🎨 Design Philosophy: "Summer Night NYC"
+## Interface Details
 
-The interface is built on a custom palette titled **"Summer Night NYC"**, emphasizing deep navy backgrounds, vibrant cyan glow (Arc Reactor inspired), and warm amber accents. 
+The application utilizes a dark-themed "glassmorphism" aesthetic, leveraging CSS backdrop filters and grid layouts for a clean, professional user experience. 
 
-- **Typography**: Uses **Inter** for readability and **Satoshi** for a premium display feel.
-- **Motion**: Every interaction is designed to feel intentional, using `cubic-bezier` curves to provide a high-end, smooth user experience.
+- **Typography**: Inter and Satoshi fonts.
+- **Animations**: CSS transitions and custom easing for smooth UI state changes.
 
 ---
 
-Created with ❤️ by **Aryan**
+*Developed by Aryan*
