@@ -137,73 +137,33 @@ const initThreeJS = () => {
     let mouseY = 0;
     let targetParallaxX = 0;
     let targetParallaxY = 0;
-    let isHovering = false;
-    let isLocked = false;
-    let targetLockRotationX = 0;
-    let targetLockRotationY = 0;
 
     // Base rotation accumulator
     let baseRotationY = 0;
 
     const canvasElement = renderer.domElement;
 
-    // Mouse Move
+    // Mouse Move for parallax effect
     canvasElement.addEventListener('mousemove', (event) => {
         // Normalized coordinates for parallax target
         mouseX = (event.clientX - window.innerWidth / 2) * 0.0001;
         mouseY = (event.clientY - window.innerHeight / 2) * 0.0001;
     });
 
-    // Hover detection
-    canvasElement.addEventListener('mouseenter', () => { isHovering = true; });
-    canvasElement.addEventListener('mouseleave', () => { isHovering = false; });
-
-    // Click to lock/unlock
-    canvasElement.addEventListener('click', (event) => {
-        if (isLocked) {
-            isLocked = false;
-        } else {
-            isLocked = true;
-
-            // Calculate target rotation based on click position
-            const normalizedX = (event.clientX / window.innerWidth) * 2 - 1;
-            const normalizedY = -(event.clientY / window.innerHeight) * 2 + 1;
-
-            // Current effective rotation
-            const currentRotY = globeGroup.rotation.y;
-            const currentRotX = globeGroup.rotation.x;
-
-            // Set target to be current + small offset based on mouse position
-            // This ensures we don't "unwind" the rotation
-            targetLockRotationY = currentRotY + (normalizedX * 0.2);
-            targetLockRotationX = currentRotX + (normalizedY * 0.2);
-        }
-    });
-
     const animate = () => {
         requestAnimationFrame(animate);
 
-        if (isLocked) {
-            // Smoothly interpolate to locked position
-            // Very slow lerp factor (0.02) for "heavy" feel
-            globeGroup.rotation.x += (targetLockRotationX - globeGroup.rotation.x) * 0.02;
-            globeGroup.rotation.y += (targetLockRotationY - globeGroup.rotation.y) * 0.02;
-        } else {
-            // 1. Base Rotation (Earth spins West to East)
-            // Only rotate if hovering
-            if (isHovering) {
-                baseRotationY += 0.001; // Very slow speed
-            }
+        // 1. Base Rotation (Earth spins West to East) - Always spinning
+        baseRotationY += 0.001; // Very slow speed, continuous rotation
 
-            // 2. Parallax Easing
-            targetParallaxX += (mouseX - targetParallaxX) * 0.05;
-            targetParallaxY += (mouseY - targetParallaxY) * 0.05;
+        // 2. Parallax Easing
+        targetParallaxX += (mouseX - targetParallaxX) * 0.05;
+        targetParallaxY += (mouseY - targetParallaxY) * 0.05;
 
-            // 3. Apply Rotation
-            // We add the parallax offset to the base rotation
-            globeGroup.rotation.y = baseRotationY + targetParallaxX;
-            globeGroup.rotation.x = targetParallaxY;
-        }
+        // 3. Apply Rotation
+        // We add the parallax offset to the base rotation
+        globeGroup.rotation.y = baseRotationY + targetParallaxX;
+        globeGroup.rotation.x = targetParallaxY;
 
         // Stars subtle movement (always)
         stars.rotation.y -= 0.00005;
