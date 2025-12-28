@@ -6,29 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Price Predictor | AI-Powered Valuation</title>
 
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Satoshi:wght@300;400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
+    
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <!-- 3D Background Container -->
     <div id="canvas-container"></div>
 
-    <!-- App Container -->
     <div class="app-container">
-        <!-- Header -->
         <header class="app-header">
             <div class="branding-container">
                 <div class="logo">
@@ -44,10 +38,8 @@
             </div>
         </header>
 
-        <!-- Content Grid -->
         <div class="content-grid">
 
-            <!-- Left Panel: Input Form -->
             <section class="glass-card input-panel">
                 <div class="card-header">
                     <h2>Property Details</h2>
@@ -59,7 +51,6 @@
                         <label for="bedrooms">Bedrooms</label>
                         <div class="input-wrapper">
                             <input type="number" id="bedrooms" name="BedroomsTotal" min="0" max="10" value="3" required>
-                            <span class="unit">Beds</span>
                         </div>
                     </div>
 
@@ -68,7 +59,6 @@
                         <div class="input-wrapper">
                             <input type="number" id="bathrooms-full" name="BathroomsFull" min="0" max="10" value="2"
                                 required>
-                            <span class="unit">Baths</span>
                         </div>
                     </div>
 
@@ -76,16 +66,14 @@
                         <label for="bathrooms-half">Half Bathrooms</label>
                         <div class="input-wrapper">
                             <input type="number" id="bathrooms-half" name="BathroomsHalf" min="0" max="5" value="1">
-                            <span class="unit">Baths</span>
                         </div>
                     </div>
 
-                    <div class="form-group full-width">
-                        <label for="living-area">Living Area</label>
+                    <div class="form-group">
+                        <label for="living-area">Living Area (Sq Ft)</label>
                         <div class="input-wrapper">
                             <input type="number" id="living-area" name="LivingArea" min="100" max="20000" step="10"
                                 value="2500" required>
-                            <span class="unit">Sq Ft</span>
                         </div>
                     </div>
 
@@ -98,21 +86,16 @@
                 </form>
             </section>
 
-            <!-- Right Panel: Results & Visualization -->
             <section class="glass-card result-panel" id="result-panel">
-                <!-- Initial State -->
                 <div class="empty-state" id="empty-state">
                     <div class="pulse-ring"></div>
                     <p>Awaiting Property Data...</p>
                 </div>
 
-                <!-- Loading State -->
                 <div class="loading-state hidden" id="loading-state">
                     <div class="loader-satellite"></div>
                     <p>Analyzing Market Data...</p>
                 </div>
-
-                <!-- Result State -->
                 <div class="result-content hidden" id="result-content">
                     <div class="price-display">
                         <span class="currency">$</span>
@@ -136,7 +119,6 @@
                     <div class="property-summary">
                         <h3>Analysis Summary</h3>
                         <ul id="summary-list">
-                            <!-- Populated by JS -->
                         </ul>
                     </div>
                 </div>
@@ -144,7 +126,7 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+  
     <script src="app.js"></script>
 </body>
 
